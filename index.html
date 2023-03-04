@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./vue.js"></script>
+  <title>Techno</title>
+</head>
+
+<body>
+  <div id="app">
+    <section class="products">
+      <div @click="fetchProduct(item.id)" v-for="item in products" class="product" :key="item.id">
+        <img :src="item.img" :alt="item.nome" class="product__img" />
+        <div class="product__info">
+          <span class="product__price">{{item.preco | formatedPrice}}</span>
+          <h2 class="product__title">{{item.nome}}</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="modal" v-if="product">
+      <div class="modal__container">
+        <div class="modal__img">
+          <img :src="product.img" :alt="product.nome">
+        </div>
+        <div class="modal__info">
+          <span class="info__price">{{product.preco}}</span>
+          <h2 class="info__title">{{product.nome}}</h2>
+          <p class="info__description">{{product.descricao}}</p>
+          <button class="info__btn">Adicionar item</button>
+        </div>
+        <div class="modal__reviews">
+          <h2 class="reviews__subtitle">Avaliações</h2>
+          <ul>
+            <li class="reviews__content" v-for="review in product.reviews">
+              <p class="reviews__description">{{review.descricao}}</p>
+              <p class="reviews__user">{{review.nome}} | {{review.estrelas}} estrelas</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
