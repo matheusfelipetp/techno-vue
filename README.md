@@ -1,5 +1,5 @@
 # 🏪 Techno
-E-commerce criado em Vue.js, com o objetivo de dar início aos estudos envolvendo esse framework. Nessa aplicação, é possível adicionar produtos ao carrinho e visualizar o total das compras, além de possuir um controle de estoque.
+E-commerce criado em **Vue.js**, com o objetivo de dar início aos estudos envolvendo esse framework. Nessa aplicação, é possível adicionar/remover produtos ao carrinho e visualizar o total das compras, além de possuir um controle de estoque.
 
 ## 💻 Tecnologias
 - HTML
